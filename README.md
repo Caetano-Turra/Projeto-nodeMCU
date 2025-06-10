@@ -1,37 +1,70 @@
-# Projeto-nodeMCU
+# Projeto NodeMCU com MQTT
 
-from pathlib import Path
+Este projeto utiliza um NodeMCU para controlar LEDs via MQTT. Os LEDs podem ser ligados e desligados através de tópicos específicos no broker MQTT.
 
-readme_content = """# Projeto NodeMCU + MQTT - Controle de LED via Tópicos
+## Descrição
 
-## Sumário
+O código conecta o NodeMCU a uma rede Wi-Fi e se comunica com um broker MQTT. Ele assina tópicos para receber comandos de controle e publica o estado dos LEDs.
 
-1. [Visão Geral](#visão-geral)  
-2. [Estrutura de Pastas](#estrutura-de-pastas)  
-3. [Pré-requisitos](#pré-requisitos)  
-4. [Instalação e Configuração](#instalação-e-configuração)  
-   - [Drivers do NodeMCU](#drivers-do-nodemcu)  
-   - [PlatformIO](#platformio)  
-   - [Mosquitto (Broker MQTT)](#mosquitto-broker-mqtt)  
-   - [MQTT Explorer (Cliente Gráfico)](#mqtt-explorer-cliente-gráfico)  
-5. [Código Fonte](#código-fonte)  
-   - [Configurações Wi-Fi e MQTT](#configurações-wi-fi-e-mqtt)  
-   - [Callback e Controle do LED](#callback-e-controle-do-led)  
-   - [Estrutura de Tópicos](#estrutura-de-tópicos)  
-6. [Como Compilar e Carregar](#como-compilar-e-carregar)  
-7. [Testes e Exemplos](#testes-e-exemplos)  
-8. [Estrutura de Tópicos por Cômodo](#estrutura-de-tópicos-por-cômodo)  
-9. [Contribuindo](#contribuindo)  
+## Requisitos
 
----
+* NodeMCU (ESP8266)
+* Biblioteca PubSubClient
+* Biblioteca ESP8266WiFi
 
-## 1. Visão Geral
+## Configuração
 
-Este projeto utiliza um NodeMCU (ESP8266) para controle de um LED por meio de comandos via protocolo MQTT...
-<!-- conteúdo continua, conforme gerado acima -->
-"""
+1. *Instalação do PlatformIO*: Certifique-se de ter o PlatformIO instalado.
+2. **Configuração do platformio.ini**:
+    ini
+    [env:nodemcuv2]
+    platform = espressif8266
+    board = nodemcuv2
+    framework = arduino
 
-# Salva o conteúdo no arquivo
-readme_path = Path("README_NodeMCU_MQTT.md")
-readme_path.write_text(readme_content, encoding="utf-8")
-print(f"Arquivo salvo como: {readme_path}")
+    lib_deps =
+        knolleary/PubSubClient
+    
+
+3. *Alterar credenciais Wi-Fi e MQTT*: No arquivo main.cpp, ajuste as seguintes linhas com suas informações:
+    cpp
+    const char* ssid = "SEU_SSID";
+    const char* password = "SUA_SENHA";
+    const char* mqtt_server = "ENDERECO_DO_BROKER";
+    const int mqtt_port = PORTA_DO_BROKER;
+    
+
+## Tópicos MQTT
+
+### Tópicos de Assinatura
+
+Os seguintes tópicos podem ser usados para controlar os LEDs:
+
+* casa/sala/led/set
+* casa/cozinha/led/set
+* casa/quarto1/led/set
+* casa/quarto2/led/set
+* casa/varanda/led/set
+
+### Tópicos de Publicação
+
+Os estados dos LEDs são publicados nos seguintes tópicos:
+
+* casa/sala/led/status
+* casa/cozinha/led/status
+* casa/quarto1/led/status
+* casa/quarto2/led/status
+* casa/varanda/led/status
+
+## Como Usar
+
+1. *Compilar e Fazer o Upload*: Utilize o PlatformIO para compilar e fazer o upload do código para o NodeMCU.
+2. *Publicar Comandos*: Envie mensagens ON ou OFF para os tópicos de assinatura correspondentes para controlar os LEDs.
+
+## Contribuições
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou um pull request.
+
+## Licença
+
+Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
