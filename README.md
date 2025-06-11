@@ -21,8 +21,6 @@ O código conecta o NodeMCU a uma rede Wi-Fi e se comunica com um broker MQTT. E
     platform = espressif8266
     board = nodemcuv2
     framework = arduino
-   ![MQTTExplorer](https://github.com/user-attachments/assets/e1d89a73-0d22-4708-905c-7c68c204cd0f)
-
 
     lib_deps =
         knolleary/PubSubClient
