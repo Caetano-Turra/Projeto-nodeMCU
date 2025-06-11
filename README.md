@@ -61,6 +61,17 @@ Os estados dos LEDs são publicados nos seguintes tópicos:
 1. *Compilar e Fazer o Upload*: Utilize o PlatformIO para compilar e fazer o upload do código para o NodeMCU.
 2. *Publicar Comandos*: Envie mensagens ON ou OFF para os tópicos de assinatura correspondentes para controlar os LEDs.
 
+## Imagens do Projeto
+
+### Circuito com LEDs
+![Circuito com LEDs 1](Imagens/CircuitocomLEDs.jpg)
+
+### Circuito com LEDs (Alternativa)
+![Circuito com LEDs 2](Imagens/CircuitocomLEDs(Alternativa).jpg)
+
+### MQTT Explorer
+![MQTT Explorer](Imagens/MQTTExplorer.jpg)
+
 ## Contribuições
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou um pull request.
