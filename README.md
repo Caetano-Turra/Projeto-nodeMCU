@@ -66,13 +66,14 @@ Os estados dos LEDs são publicados nos seguintes tópicos:
 ## Imagens do Projeto
 
 ### Circuito com LEDs
-![Circuito com LEDs 1](Imagens/CircuitocomLEDs.jpg)
+![CircuitocomLEDs](https://github.com/user-attachments/assets/4257bef2-71f4-4212-97df-6e50c29c305d)
 
 ### Circuito com LEDs (Alternativa)
-![Circuito com LEDs 2](Imagens/CircuitocomLEDs(Alternativa).jpg)
+![CircuitocomLEDs(Alternativa)](https://github.com/user-attachments/assets/a0c72f8b-f873-4753-ac16-422fb3528fed)
 
 ### MQTT Explorer
-![MQTT Explorer](Imagens/MQTTExplorer.jpg)
+![MQTTExplorer](https://github.com/user-attachments/assets/ef49cdd2-2494-46a6-bd1d-c1f5452a043f)
+
 
 ## Contribuições
 
